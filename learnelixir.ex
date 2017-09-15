@@ -10,6 +10,8 @@
 
 # Both should be in your path if you installed elixir correctly.
 
+# https://elixir-lang.org/crash-course.html
+
 ## ---------------------------
 ## -- Basic types
 ## ---------------------------
