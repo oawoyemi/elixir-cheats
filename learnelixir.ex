@@ -1,4 +1,26 @@
+##--------------------------
+  -- tests
+##--------------------------
 
+# assert-value - generate tests and test data
+# https://github.com/assert-value/assert_value_elixir
+# 
+
+##--------------------------
+## -- links
+##--------------------------
+# style guide - https://github.com/christopheradams/elixir_style_guide
+# phoenix apis - https://blog.codeship.com/an-introduction-to-apis-with-phoenix/
+
+##--------------------------
+## -- phoenix
+##--------------------------
+# mix phoenix.new --no-ecto --no-brunch --no-html <project>
+# Views -  create dictionaries that represent the JSON for an action.
+for n <- [1, 2, 3, 4], do: n * n
+for n <- 1..4, do: n * n
+values = [good: 1, good: 2, bad: 3, good: 4]
+for {:good, n} <- values, do: n * n #[1, 4, 16]
 
 # Single line comments start with a number symbol.
 
@@ -220,6 +242,12 @@ end
 ## -- Modules and Functions
 ## ---------------------------
 
+# default values defined by '\\'
+defmodule Math do
+  def add(a \\ 2, b) do
+    a + b
+  end
+end
 # Anonymous functions (notice the dot)
 square = fn(x) -> x * x end
 square.(5) #=> 25
@@ -342,6 +370,10 @@ joe_info.name #=> "Joe"
 # Update the value of age
 older_joe_info = %{ joe_info | age: 31 }
 #=> %Person{age: 31, height: 180, name: "Joe"}
+
+
+# Bang convention --
+## The bang convention applies to situations where there are two versions of a function-- one that raises an exception (the bang version), and one that doesn't.
 
 # The `try` block with the `rescue` keyword is used to handle exceptions
 try do
