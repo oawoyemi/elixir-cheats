@@ -12,15 +12,30 @@
 # style guide - https://github.com/christopheradams/elixir_style_guide
 # phoenix apis - https://blog.codeship.com/an-introduction-to-apis-with-phoenix/
 
+
+
+##--------------------------
+## -- IEx
+##--------------------------
+
+# h() - enter help
+#
+
 ##--------------------------
 ## -- phoenix
 ##--------------------------
 # mix phoenix.new --no-ecto --no-brunch --no-html <project>
 # Views -  create dictionaries that represent the JSON for an action.
+
+# comprehensions
 for n <- [1, 2, 3, 4], do: n * n
 for n <- 1..4, do: n * n
 values = [good: 1, good: 2, bad: 3, good: 4]
 for {:good, n} <- values, do: n * n #[1, 4, 16]
+
+# map and flatmap
+Enum.map([:a,:b,:c], fn(x) -> [x,x] end) # [[:a, :a], [:b, :b], [:c, :c]]
+Enum.flat_map([:a,:b,:c], fn(x) -> [x,x] end) #[:a, :a, :b, :b, :c, :c]
 
 # Single line comments start with a number symbol.
 
